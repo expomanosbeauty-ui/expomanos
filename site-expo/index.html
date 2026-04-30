@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expo Manos Makeup & Beauty 2026 | Buenos Aires</title>
+  <meta name="description" content="La feria líder de belleza en Argentina. 14 años reuniendo a toda la industria cosmética. 5 y 6 de Septiembre 2026, La Rural, Buenos Aires." />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --orange: #E87820;
+      --green: #2D6251;
+      --cream: #F5F0E8;
+      --dark-green: #1C4035;
+      --white: #ffffff;
+      --dark: #111111;
+      --ampersand: #D4C9B0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 64px;
+      background: var(--cream);
+      border-bottom: 3px solid var(--orange);
+    }
+
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      color: var(--green);
+      text-transform: uppercase;
+    }
+    .nav-logo span { color: var(--orange); }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--green);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-cta {
+      background: var(--orange) !important;
+      color: white !important;
+      padding: 10px 24px;
+    }
+    .nav-cta:hover { background: var(--green) !important; color: white !important; }
+
+    /* SIDE BANNERS */
+    .side-banner {
+      position: fixed;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      background: var(--orange);
+      color: white;
+      padding: 24px 8px;
+      z-index: 90;
+      top: 64px;
+      bottom: 0;
+    }
+    .side-banner.left { left: 0; }
+    .side-banner.right { right: 0; transform: rotate(180deg); top: 0; bottom: 0; }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+      padding-top: 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      padding: 80px 60px 80px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--orange);
+      color: white;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      margin-bottom: 40px;
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      line-height: 0.88;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      animation: fadeUp 0.7s 0.1s ease both;
+    }
+    .hero-title .t-expo { font-size: clamp(3.5rem, 6vw, 6rem); color: var(--green); display: block; }
+    .hero-title .t-manos { font-size: clamp(5rem, 9vw, 8.5rem); color: var(--orange); display: block; line-height: 0.85; }
+    .hero-title .t-makeup { font-size: clamp(2.8rem, 5vw, 5rem); color: var(--green); display: block; }
+    .hero-title .t-amp { color: var(--ampersand); }
+    .hero-title .t-beauty { font-size: clamp(3.2rem, 6vw, 6rem); color: var(--orange); display: block; }
+    .hero-title .t-anos {
+      font-size: clamp(1.2rem, 2vw, 2rem);
+      color: var(--green);
+      font-weight: 600;
+      display: block;
+      margin-top: 12px;
+      letter-spacing: 4px;
+      border-top: 2px solid var(--green);
+      padding-top: 12px;
+    }
+
+    .hero-date-bar {
+      display: flex;
+      align-items: stretch;
+      margin-bottom: 40px;
+      animation: fadeUp 0.7s 0.2s ease both;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+
+    .date-chunk {
+      background: var(--green);
+      color: white;
+      padding: 16px 24px;
+      text-align: center;
+    }
+    .date-chunk.orange { background: var(--orange); }
+    .date-day { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 2.5rem; line-height: 1; }
+    .date-info { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.85; }
+    .date-sep { background: var(--dark); color: white; padding: 16px 12px; font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; display: flex; align-items: center; }
+
+    .location-chunk {
+      background: var(--cream);
+      border: 2px solid var(--green);
+      border-left: none;
+      padding: 12px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .location-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--green); text-transform: uppercase; }
+    .location-city { font-size: 0.75rem; color: var(--orange); font-weight: 600; letter-spacing: 1px; }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: white;
+      padding: 16px 40px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--green); transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--green);
+      padding: 16px 40px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-decoration: none;
+      text-transform: uppercase;
+      border: 2px solid var(--green);
+      transition: background 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { background: var(--green); color: white; }
+
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+      min-height: 500px;
+    }
+    .hero-art {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      animation: fadeIn 1s 0.4s ease both;
+    }
+    .hero-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      animation: fadeIn 1s 0.4s ease both;
+    }
+    .hero-right-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--cream) 0%, transparent 25%);
+      z-index: 1;
+    }
+
+    /* VIDEO SECTION */
+    #videos {
+      background: var(--cream);
+      padding: 100px 80px;
+    }
+    #videos .section-header { text-align: center; margin-bottom: 64px; }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .video-card {
+      position: relative;
+      border-radius: 0;
+      overflow: hidden;
+      background: var(--dark);
+      aspect-ratio: 9/16;
+      cursor: pointer;
+      border: 3px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    .video-card.wide {
+      grid-column: span 2;
+      aspect-ratio: 16/9;
+    }
+
+    .video-card:hover { border-color: var(--orange); }
+
+    .video-card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(45,98,81,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+      z-index: 2;
+    }
+
+    .video-card:hover .video-overlay { background: rgba(45,98,81,0.1); }
+    .video-card.playing .video-overlay { opacity: 0; pointer-events: none; }
+
+    .play-btn {
+      width: 64px;
+      height: 64px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, background 0.2s;
+      flex-shrink: 0;
+    }
+
+    .video-card:hover .play-btn { transform: scale(1.1); background: white; }
+    .video-card:hover .play-btn svg { fill: var(--orange); }
+
+    .play-btn svg { fill: white; margin-left: 4px; }
+
+    /* TICKER */
+    .ticker {
+      background: var(--green);
+      overflow: hidden;
+      padding: 14px 0;
+      border-top: 4px solid var(--orange);
+      border-bottom: 4px solid var(--orange);
+    }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker 30s linear infinite;
+    }
+    .ticker-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 3px;
+      white-space: nowrap;
+      padding: 0 32px;
+      color: white;
+      text-transform: uppercase;
+    }
+    .ticker-item::after { content: '◆'; margin-left: 32px; color: var(--orange); }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* STATS */
+    #stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--dark);
+    }
+    .stat-card {
+      padding: 64px 40px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.07);
+      transition: background 0.3s;
+    }
+    .stat-card:last-child { border-right: none; }
+    .stat-card:hover { background: #1a1a1a; }
+    .stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(3.5rem, 5vw, 5rem);
+      line-height: 1;
+      color: var(--orange);
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    /* ABOUT */
+    #about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
+    }
+    .about-img-side {
+      background: var(--green);
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+      position: relative;
+    }
+    .about-img-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: luminosity;
+      opacity: 0.85;
+    }
+    .about-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(28,64,53,0.72);
+      display: flex;
+      align-items: flex-end;
+      padding: 56px;
+    }
+    .about-quote {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: white;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    .about-quote span { color: var(--orange); }
+
+    .about-text-side {
+      background: var(--cream);
+      padding: 80px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .section-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      text-transform: uppercase;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 32px;
+    }
+    .section-title span { color: var(--orange); }
+
+    .about-text {
+      color: #4a4a4a;
+      line-height: 1.8;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    /* WHO */
+    #who { background: var(--dark); padding: 100px 80px; }
+    .section-header { text-align: center; margin-bottom: 64px; }
+    .section-header .section-title { color: white; }
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .who-card {
+      background: #1a1a1a;
+      padding: 48px 36px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+    .who-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .who-card:hover { background: #222; }
+    .who-card:hover::before { transform: scaleX(1); }
+    .who-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 4.5rem;
+      color: rgba(255,255,255,0.04);
+      position: absolute;
+      top: 12px; right: 16px;
+      line-height: 1;
+    }
+    .who-icon { font-size: 2rem; margin-bottom: 20px; }
+    .who-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      color: white;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    .who-desc { font-size: 0.88rem; color: rgba(255,255,255,0.42); line-height: 1.7; }
+
+    /* FEATURES */
+    #features { background: var(--cream); padding: 100px 80px; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .feature-cell {
+      background: white;
+      padding: 56px 48px;
+      position: relative;
+      overflow: hidden;
+      border-left: 5px solid transparent;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .feature-cell:hover { background: #fdfbf8; border-left-color: var(--orange); }
+    .feature-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 6rem;
+      color: rgba(0,0,0,0.04);
+      position: absolute;
+      top: 10px; right: 20px;
+      line-height: 1;
+    }
+    .feature-icon { font-size: 2rem; margin-bottom: 20px; }
+    .feature-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+      letter-spacing: 1px;
+    }
+    .feature-desc { font-size: 0.93rem; color: #555; line-height: 1.75; }
+
+    /* GALLERY */
+    #gallery { background: var(--dark); padding: 100px 80px; }
+    #gallery .section-title { color: white; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .gallery-item {
+      overflow: hidden;
+      background: #1a1a1a;
+      border: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1;
+      transition: border-color 0.3s;
+    }
+    .gallery-item:hover { border-color: var(--orange); }
+    /* Primeira foto ocupa 2 colunas e é mais alta */
+    .gallery-item:first-child { grid-column: span 2; aspect-ratio: 16/9; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; display: block; }
+    .gallery-item:hover img { transform: scale(1.06); }
+
+    /* MARCAS STRIP */
+    .marcas-strip {
+      background: var(--cream);
+      padding: 56px 0;
+      border-top: 3px solid var(--green);
+      border-bottom: 3px solid var(--green);
+      overflow: hidden;
+    }
+    .marcas-track {
+      display: flex;
+      width: max-content;
+      animation: ticker 22s linear infinite;
+    }
+    .marca-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 3px;
+      white-space: nowrap;
+      padding: 0 32px;
+      color: var(--green);
+      text-transform: uppercase;
+    }
+    .marca-item::after { content: '◆'; margin-left: 32px; color: var(--orange); }
+
+    /* CTA */
+    #cta {
+      background: var(--green);
+      padding: 130px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #cta::before {
+      content: '2026';
+      position: absolute;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 24vw;
+      color: rgba(255,255,255,0.04);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      line-height: 1;
+    }
+    .cta-content { position: relative; z-index: 1; }
+    .cta-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+    .cta-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      text-transform: uppercase;
+      color: white;
+      line-height: 0.95;
+      margin-bottom: 20px;
+    }
+    .cta-title span { color: var(--orange); }
+    .cta-sub {
+      color: rgba(255,255,255,0.55);
+      font-size: 1rem;
+      margin: 0 auto 56px;
+      max-width: 480px;
+      line-height: 1.7;
+    }
+    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      padding: 18px 44px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-whatsapp:hover { background: #1aad52; transform: translateY(-2px); }
+
+    .btn-instagram {
+      background: transparent;
+      color: white;
+      padding: 18px 44px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      border: 2px solid rgba(255,255,255,0.4);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-instagram:hover { border-color: white; background: rgba(255,255,255,0.08); }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      padding: 72px 80px 40px;
+      border-top: 4px solid var(--orange);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 56px;
+      max-width: 1200px;
+      margin: 0 auto 56px;
+    }
+    .footer-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.9;
+      margin-bottom: 20px;
+    }
+    .footer-logo .fl-expo { font-size: 1.8rem; color: var(--green); display: block; }
+    .footer-logo .fl-manos { font-size: 2.8rem; color: var(--orange); display: block; }
+    .footer-logo .fl-rest { font-size: 1.1rem; color: rgba(255,255,255,0.4); display: block; }
+    .footer-desc { color: rgba(255,255,255,0.32); font-size: 0.85rem; line-height: 1.7; max-width: 260px; }
+    .footer-col-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 24px;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .footer-links a { color: rgba(255,255,255,0.32); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--orange); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: rgba(255,255,255,0.2);
+      font-size: 0.8rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .side-banner { display: none; }
+
+      #hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 40px 24px 48px; }
+      .hero-right { height: 55vw; }
+
+      #stats { grid-template-columns: repeat(2, 1fr); }
+
+      #about { grid-template-columns: 1fr; }
+      .about-img-side { height: 280px; }
+      .about-text-side { padding: 56px 28px; }
+
+      #who { padding: 72px 20px; }
+      .who-grid { grid-template-columns: 1fr 1fr; }
+
+      #features { padding: 72px 20px; }
+      .features-grid { grid-template-columns: 1fr; }
+
+      #gallery { padding: 72px 20px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item:first-child { grid-column: span 2; }
+
+      #videos { padding: 72px 20px; }
+      .videos-grid { grid-template-columns: 1fr; }
+      .video-card.wide { grid-column: span 1; aspect-ratio: 16/9; }
+
+      #cta { padding: 80px 28px; }
+
+      footer { padding: 56px 24px 36px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Expo<span>Manos</span> 2026</div>
+    <ul class="nav-links">
+      <li><a href="#about">Nosotros</a></li>
+      <li><a href="#who">¿Para quién?</a></li>
+      <li><a href="#features">Experiencias</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#gallery">Galería</a></li>
+      <li><a href="#cta" class="nav-cta">¡Sumate!</a></li>
+    </ul>
+  </nav>
+
+  <!-- SIDE BANNERS -->
+  <div class="side-banner left">CAPACITACIONES · LANZAMIENTOS · TENDENCIAS · MÁS</div>
+  <div class="side-banner right">MODA · MAKEUP · SORTEOS · COSMÉTICAS · PENSTAÑAS</div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-left">
+      <div class="hero-badge">✦ La feria líder de belleza en Argentina ✦</div>
+      <h1 class="hero-title">
+        <span class="t-expo">EXPO</span>
+        <span class="t-manos">MANOS</span>
+        <span class="t-makeup">MAKE<span class="t-amp">&amp;</span>UP</span>
+        <span class="t-beauty">BEAUTY</span>
+        <span class="t-anos">— 14 AÑOS —</span>
+      </h1>
+      <div class="hero-date-bar">
+        <div class="date-chunk">
+          <div class="date-day">5</div>
+          <div class="date-info">Sep</div>
+        </div>
+        <div class="date-sep">&amp;</div>
+        <div class="date-chunk orange">
+          <div class="date-day">6</div>
+          <div class="date-info">Sep</div>
+        </div>
+        <div class="location-chunk">
+          <div class="location-name">La Rural</div>
+          <div class="location-city">Buenos Aires · 2026</div>
+        </div>
+      </div>
+      <div class="hero-btns">
+        <a href="https://wa.me/5491136326301?text=Hola!%20Quiero%20información%20sobre%20Expo%20Manos%202026" class="btn-primary" target="_blank">¡Quiero asistir como visitante!</a>
+        <a href="#about" class="btn-secondary">Conocer más</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <iframe class="hero-video" src="https://www.youtube.com/embed/knZwfDYZUmA?autoplay=1&mute=1&loop=1&playlist=knZwfDYZUmA&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%;height:100%;object-fit:cover;border:none;"></iframe>
+      <div class="hero-right-overlay"></div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span class="ticker-item">TODO PARA MANICURIA</span>
+      <span class="ticker-item">BELLEZA COSMÉTICA</span>
+      <span class="ticker-item">PENSTAÑAS</span>
+      <span class="ticker-item">MAKEUP</span>
+      <span class="ticker-item">TENDENCIAS</span>
+      <span class="ticker-item">INSUMOS</span>
+      <span class="ticker-item">LANZAMIENTOS</span>
+      <span class="ticker-item">PROMOCIONES</span>
+      <span class="ticker-item">MODA</span>
+      <span class="ticker-item">SORTEOS</span>
+      <span class="ticker-item">TODO PARA MANICURIA</span>
+      <span class="ticker-item">BELLEZA COSMÉTICA</span>
+      <span class="ticker-item">PENSTAÑAS</span>
+      <span class="ticker-item">MAKEUP</span>
+      <span class="ticker-item">TENDENCIAS</span>
+      <span class="ticker-item">INSUMOS</span>
+      <span class="ticker-item">LANZAMIENTOS</span>
+      <span class="ticker-item">PROMOCIONES</span>
+      <span class="ticker-item">MODA</span>
+      <span class="ticker-item">SORTEOS</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section id="stats">
+    <div class="stat-card reveal">
+      <div class="stat-num">14</div>
+      <div class="stat-label">Años de trayectoria</div>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-num">+80</div>
+      <div class="stat-label">Empresas y marcas</div>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-num">15K</div>
+      <div class="stat-label">Visitantes por edición</div>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-num">2013</div>
+      <div class="stat-label">Desde el año</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-img-side reveal">
+      <img src="4f0eeef0-af1b-475f-852c-c8666c28d062.jpeg" alt="Expo Manos 2026" onerror="this.style.display='none'" />
+      <div class="about-img-overlay">
+        <div class="about-quote">Un antes<br>y un después<br>en la <span>industria</span></div>
+      </div>
+    </div>
+    <div class="about-text-side reveal">
+      <p class="section-tag">Nuestra historia</p>
+      <h2 class="section-title">Desde 2013<br><span>liderando</span> la belleza</h2>
+      <p class="about-text">Creadora y Organizadora: ANDREA MARIANI. Expo Manos y Uñas & Makeup es una feria que desde el año 2013 marcó un antes y un después en esta industria. Un punto de encuentro clave para reunir Elaboradores, Importadores, Comercios, Profesionales, Educadores y consumidores.</p>
+      <p class="about-text">Todos reunidos en una exposición ferial comercial diseñada para el crecimiento exponencial en Argentina. Una feria líder en nuestro país, hoy con 14 años de trayectoria dedicada a la Belleza y entusiastas del sector.</p>
+      <p class="about-text">Facilitando negocios, alianzas comerciales, lanzamientos de productos y la actualización en nuevas tendencias. Más de 80 empresas con más de 15.000 visitantes bien segmentados.</p>
+    </div>
+  </section>
+
+  <!-- WHO -->
+  <section id="who">
+    <div class="section-header reveal">
+      <p class="section-tag">¿Para quién es?</p>
+      <h2 class="section-title">Diseñada para<br><span>toda la industria</span></h2>
+    </div>
+    <div class="who-grid">
+      <div class="who-card reveal"><div class="who-num">01</div><div class="who-icon">🏭</div><div class="who-name">Elaboradores</div><div class="who-desc">Productores y fabricantes de insumos y productos de belleza que buscan visibilidad y nuevos canales de distribución.</div></div>
+      <div class="who-card reveal"><div class="who-num">02</div><div class="who-icon">📦</div><div class="who-name">Importadores</div><div class="who-desc">Distribuidores de marcas internacionales que quieren consolidar su presencia en el mercado argentino.</div></div>
+      <div class="who-card reveal"><div class="who-num">03</div><div class="who-icon">🏪</div><div class="who-name">Comercios</div><div class="who-desc">Negocios del sector que buscan ampliar su catálogo, hacer networking y cerrar alianzas comerciales estratégicas.</div></div>
+      <div class="who-card reveal"><div class="who-num">04</div><div class="who-icon">💅</div><div class="who-name">Profesionales</div><div class="who-desc">Manicuristas, maquilladores, esteticistas y técnicas en uñas que quieren actualizarse en tendencias mundiales.</div></div>
+      <div class="who-card reveal"><div class="who-num">05</div><div class="who-icon">🎓</div><div class="who-name">Educadores</div><div class="who-desc">Formadores y academias del sector beauty que buscan visibilidad y conexiones con el mercado profesional.</div></div>
+      <div class="who-card reveal"><div class="who-num">06</div><div class="who-icon">✨</div><div class="who-name">Entusiastas</div><div class="who-desc">Consumidoras apasionadas por la belleza que quieren descubrir las últimas novedades del sector.</div></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="section-header reveal">
+      <p class="section-tag">Lo que encontrarás</p>
+      <h2 class="section-title">Una experiencia<br><span>completa</span></h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-cell reveal">
+        <div class="feature-num">01</div>
+        <div class="feature-icon">🚀</div>
+        <div class="feature-title">Tendencias y Lanzamientos</div>
+        <div class="feature-desc">Espacio para descubrir las últimas novedades y tendencias en productos de cosmética, belleza y estilismo. Sé la primera en conocer lo que viene.</div>
+      </div>
+      <div class="feature-cell reveal">
+        <div class="feature-num">02</div>
+        <div class="feature-icon">🤝</div>
+        <div class="feature-title">Networking y Negocios</div>
+        <div class="feature-desc">Conecta proveedores con distribuidoras, profesionales, dueños de salones y emprendedores. Alianzas y cierre de negocios en un solo lugar.</div>
+      </div>
+      <div class="feature-cell reveal">
+        <div class="feature-num">03</div>
+        <div class="feature-icon">🎓</div>
+        <div class="feature-title">Capacitación Profesional</div>
+        <div class="feature-desc">Congresos, talleres y seminarios con expertos en maquillaje, uñas y belleza, con lineamientos a nivel mundial para mantenerte siempre actualizada.</div>
+      </div>
+      <div class="feature-cell reveal">
+        <div class="feature-num">04</div>
+        <div class="feature-icon">🛍️</div>
+        <div class="feature-title">Amplia Zona de Venta</div>
+        <div class="feature-desc">Zona de exposición con más de 80 marcas líderes que ofrecen sus productos con precios especiales, promociones y lanzamientos exclusivos del evento.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section id="videos">
+    <div class="section-header reveal">
+      <p class="section-tag">En vivo y en directo</p>
+      <h2 class="section-title">Así se vive<br><span>Expomanos</span></h2>
+    </div>
+    <div class="videos-grid">
+
+      <!-- Video 1 - ancho completo (apresentacao) -->
+      <div class="video-card wide reveal" style="cursor:default;">
+        <iframe src="https://www.youtube.com/embed/ARyLvx2OWPo?si=QKsERFjanOOjeLHZ" title="Expomanos Apresentação" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:100%;border:none;display:block;"></iframe>
+      </div>
+
+      <!-- Video 2 (video2 - short) -->
+      <div class="video-card reveal" style="cursor:default;">
+        <iframe src="https://www.youtube.com/embed/EEHtjYBFSwM" title="Expomanos Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:100%;border:none;display:block;"></iframe>
+      </div>
+
+      <!-- Video 3 (video3 - short) -->
+      <div class="video-card reveal" style="cursor:default;">
+        <iframe src="https://www.youtube.com/embed/UAayiHwQewA" title="Expomanos Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:100%;border:none;display:block;"></iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="section-header reveal">
+      <p class="section-tag" style="color:var(--orange)">Galería</p>
+      <h2 class="section-title" style="color:white">Viví la experiencia<br><span style="color:var(--orange)">Expomanos</span></h2>
+    </div>
+    <div class="gallery-grid">
+      <!-- Foto aérea do evento — ocupa 2 colunas -->
+      <div class="gallery-item reveal">
+        <img src="img6.jpg" alt="Vista aérea Expomanos" />
+      </div>
+      <!-- Crowd Staleks -->
+      <div class="gallery-item reveal">
+        <img src="img1.jpeg" alt="Público Expomanos" />
+      </div>
+      <!-- Crowd Meline -->
+      <div class="gallery-item reveal">
+        <img src="img2.jpeg" alt="Visitantes Expomanos" />
+      </div>
+      <!-- Vista aérea stands -->
+      <div class="gallery-item reveal">
+        <img src="img3.jpeg" alt="Stands Expomanos" />
+      </div>
+      <!-- Crowd Vogue / colorido -->
+      <div class="gallery-item reveal">
+        <img src="img5.jpeg" alt="Ambiente Expomanos" />
+      </div>
+    </div>
+  </section>
+
+  <!-- MARCAS STRIP -->
+  <div class="marcas-strip">
+    <div class="marcas-track">
+      <span class="marca-item">MANICURIA</span>
+      <span class="marca-item">BELLEZA</span>
+      <span class="marca-item">COSMÉTICA</span>
+      <span class="marca-item">PENSTAÑAS</span>
+      <span class="marca-item">MODA</span>
+      <span class="marca-item">MAKEUP</span>
+      <span class="marca-item">SORTEOS</span>
+      <span class="marca-item">LASHES</span>
+      <span class="marca-item">SKINCARE</span>
+      <span class="marca-item">TENDENCIAS</span>
+      <span class="marca-item">MANICURIA</span>
+      <span class="marca-item">BELLEZA</span>
+      <span class="marca-item">COSMÉTICA</span>
+      <span class="marca-item">PENSTAÑAS</span>
+      <span class="marca-item">MODA</span>
+      <span class="marca-item">MAKEUP</span>
+      <span class="marca-item">SORTEOS</span>
+      <span class="marca-item">LASHES</span>
+      <span class="marca-item">SKINCARE</span>
+      <span class="marca-item">TENDENCIAS</span>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div class="cta-content">
+      <p class="cta-tag">5 y 6 de Septiembre 2026 · La Rural, Buenos Aires</p>
+      <h2 class="cta-title">¿Te vas a<br><span>quedar afuera?</span></h2>
+      <p class="cta-sub">Sumate a la feria de belleza más importante de Argentina. 14 años reuniendo a toda la industria.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/5491153353414?text=Hola!%20Quiero%20información%20sobre%20Expo%20Manos%202026" class="btn-whatsapp" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Quiero ser expositor
+        </a>
+        <a href="https://www.instagram.com/expomanosmakeup" class="btn-instagram" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          @expomanosmakeup
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <span class="fl-expo">EXPO</span>
+          <span class="fl-manos">MANOS</span>
+          <span class="fl-rest">MAKEUP & BEAUTY ®</span>
+        </div>
+        <p class="footer-desc">La feria líder de belleza en Argentina. 14 años reuniendo a toda la industria cosmética en Buenos Aires.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navegación</div>
+        <ul class="footer-links">
+          <li><a href="#about">Nuestra historia</a></li>
+          <li><a href="#who">¿Para quién?</a></li>
+          <li><a href="#features">Experiencias</a></li>
+          <li><a href="#gallery">Galería</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">El evento</div>
+        <ul class="footer-links">
+          <li><a href="#">5 y 6 Sep 2026</a></li>
+          <li><a href="#">La Rural, BsAs</a></li>
+          <li><a href="#">+80 marcas</a></li>
+          <li><a href="#">+15.000 visitantes</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contacto</div>
+        <ul class="footer-links">
+          <li><a href="https://www.instagram.com/expomanosmakeup" target="_blank">@expomanosmakeup</a></li>
+          <li><a href="https://wa.me/5491153353414" target="_blank">+54 9 11 5335-3414</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Expo Manos y Uñas & Make Up®</span><li><a href="https://www.instagram.com/piter.olivier/" target="_blank">by Piter Olivier</a></li>
+      <span>Buenos Aires, Argentina</span>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+
+  </script>
+</body>
+</html>
